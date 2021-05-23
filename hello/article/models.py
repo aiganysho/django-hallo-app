@@ -32,6 +32,7 @@ class Article(BaseModel):
         related_name='articles',
         db_table='article_tags'
     )
+    like = models.ManyToManyField(get_user_model(), blank=True, related_name='like_article')
 
     class Meta:
         db_table = 'articles'
@@ -44,6 +45,8 @@ class Article(BaseModel):
     def __str__(self):
         return f'{self.id}. {self.author}: {self.title}'
 
+    def all_like(self):
+        return self.like.all().count()
 
 class Comment(BaseModel):
     article = models.ForeignKey(
@@ -61,7 +64,7 @@ class Comment(BaseModel):
         null=True,
         related_name='comments'
     )
-
+    like = models.ManyToManyField(get_user_model(), blank=True, related_name='like_comment')
     class Meta:
         db_table = 'comments'
         verbose_name = 'Комментарий'
