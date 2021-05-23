@@ -28,6 +28,8 @@ class CommentAdmin(admin.ModelAdmin):
     readonly_fields = ['id', 'created_at', 'author', 'updated_at']
 
 
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Comment, CommentAdmin)
+
