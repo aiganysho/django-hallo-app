@@ -25,11 +25,31 @@
     <p>Author: {{ article.author }}</p>
     <p>Content: {{ article.content }}</p>
     <p>Tags: {% for tag in article.tags.all %}{{ tag.tag }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+     {% if user.is_authenticated %}
+            {% if user in article.like.all  %}
+                 <a data-counter_article="counter_article{{ article.pk }}" onclick="articleUnlike(event)" href="{% url 'article:article_unlike' article.pk %}"><i class="fas fa-heart"></i></a>
+                {% else %}
+                <a data-counter_article="counter_article{{ article.pk }}" onclick="articleLike(event)" href="{% url 'article:article_like' article.pk %}"><i class="far fa-heart"></i></a>
+                {% endif %}
+            <p id="counter_article{{ article.pk }}">{{ article.like.count }}</p>
+        {% endif %}
+
 
     <h2>Comments:</h2>
     {% for comment in article.comments.all %}
-        <p>{{ comment.author }}: {{ comment.comment }}</p>
+        <div>{{ comment.author }}: {{ comment.comment }}
+        {% if user.is_authenticated %}
+            {% if user in comment.like.all  %}
+                 <a data-counter_comment="counter_comment{{ comment.pk }}" onclick="commentUnlike(event)" href="{% url 'article:comment_unlike' comment.pk %}"><i class="fas fa-heart"></i></a>
+                {% else %}
+                <a data-counter_comment="counter_comment{{ comment.pk }}" onclick="commentLike(event)" href="{% url 'article:comment_like' comment.pk %}"><i class="far fa-heart"></i></a>
+                {% endif %}
+            <p id="counter_comment{{ comment.pk }}">{{ comment.like.count }}</p>
+        {% endif %}
+        </div>
+
     {% empty %}
-        <p>Нет комментариев :(</p>
+        <div>Нет комментариев :(</div>
     {% endfor %}
 {% endblock content %}
+

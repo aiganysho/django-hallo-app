@@ -7,6 +7,8 @@
     <title>{% block title %}Новостной портал номер [-1] в мире{% endblock title %}</title>
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="{% static "css/navbar.css" %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -28,6 +30,6 @@
         <h1>{% block page_header %}Лучшие статьи в мире!{% endblock page_header %}</h1>
         {% block content %}{% endblock content %}
     </div>
-
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

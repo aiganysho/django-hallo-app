@@ -7,18 +7,14 @@
 {% for article in articles %}
     <div class="box">
         <h3><a href="{% url "article:view" article.pk %}">{{ article.title }}</a></h3>
-        <p>
-            <label for="selected_articles-{{ article.pk }}">Select:</label>
-
-            <input type="checkbox" name="selected_articles"
-
-                   id="selected_articles-{{ article.pk }}" value="{{ article.pk }}">
-        </p>
-
-        <p>
-            <a href="{% url 'accounts:user-detail' article.author_id %}">{{ article.author }}</a>
-            | {{ article.created_at|date:"d.m.Y H:i:s" }}
-        </p>
+        {% if user.is_authenticated %}
+            {% if user in article.like.all  %}
+                 <a data-counter_article="counter_article{{ article.pk }}" onclick="articleUnlike(event)" href="{% url 'article:article_unlike' article.pk %}"><i class="fas fa-heart"></i></a>
+                {% else %}
+                <a data-counter_article="counter_article{{ article.pk }}" onclick="articleLike(event)" href="{% url 'article:article_like' article.pk %}"><i class="far fa-heart"></i></a>
+                {% endif %}
+            <p id="counter_article{{ article.pk }}">{{ article.like.count }}</p>
+        {% endif %}
     </div>
 
 {% empty %}
@@ -27,5 +23,8 @@
 
 
 {% if is_paginated %}
-     {% include 'partial/pagination.html' %}
+{#     {% include 'partial/pagination.html' %}#}
 {% endif %}
+
+
+
