@@ -1,0 +1,154 @@
+[
+{
+  "model": "article.article",
+  "pk": 8,
+  "fields": {
+    "created_at": "2021-05-21T11:59:55.432Z",
+    "updated_at": "2021-05-21T11:59:55.432Z",
+    "title": "hellolo",
+    "content": "jkn o jpkl kj k",
+    "author": 2,
+    "tags": [
+      1
+    ],
+    "like": [
+      2
+    ]
+  }
+},
+{
+  "model": "article.article",
+  "pk": 11,
+  "fields": {
+    "created_at": "2021-05-22T11:56:46.394Z",
+    "updated_at": "2021-05-22T11:56:46.394Z",
+    "title": "thrwgr",
+    "content": "erijg ij",
+    "author": 2,
+    "tags": [
+      1
+    ],
+    "like": [
+      2
+    ]
+  }
+},
+{
+  "model": "article.article",
+  "pk": 13,
+  "fields": {
+    "created_at": "2021-05-23T07:10:36.369Z",
+    "updated_at": "2021-05-23T07:10:36.370Z",
+    "title": "lorem",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nemo recusandae quidem? Error, modi debitis adipisci dolore omnis soluta exercitationem aperiam accusamus vitae enim voluptates, earum voluptatum ut unde? Sed.",
+    "author": 2,
+    "tags": [
+      1
+    ],
+    "like": [
+      2
+    ]
+  }
+},
+{
+  "model": "article.article",
+  "pk": 14,
+  "fields": {
+    "created_at": "2021-05-23T07:12:06.029Z",
+    "updated_at": "2021-05-23T07:12:06.029Z",
+    "title": "python",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nemo recusandae quidem? Error, modi debitis adipisci dolore omnis soluta exercitationem aperiam accusamus vitae enim voluptates, earum voluptatum ut unde? Sed.",
+    "author": 2,
+    "tags": [
+      2
+    ],
+    "like": []
+  }
+},
+{
+  "model": "article.comment",
+  "pk": 3,
+  "fields": {
+    "created_at": "2021-05-23T06:57:17.974Z",
+    "updated_at": "2021-05-23T06:57:17.974Z",
+    "article": 11,
+    "comment": "goood",
+    "author": 2,
+    "like": [
+      2
+    ]
+  }
+},
+{
+  "model": "article.comment",
+  "pk": 4,
+  "fields": {
+    "created_at": "2021-05-23T07:11:11.645Z",
+    "updated_at": "2021-05-23T07:11:11.645Z",
+    "article": 13,
+    "comment": "very interesting)",
+    "author": 2,
+    "like": []
+  }
+},
+{
+  "model": "article.comment",
+  "pk": 5,
+  "fields": {
+    "created_at": "2021-05-23T07:12:33.364Z",
+    "updated_at": "2021-05-23T07:12:33.364Z",
+    "article": 14,
+    "comment": "so sad",
+    "author": 2,
+    "like": []
+  }
+},
+{
+  "model": "article.comment",
+  "pk": 6,
+  "fields": {
+    "created_at": "2021-05-23T07:23:42.324Z",
+    "updated_at": "2021-05-23T07:23:42.324Z",
+    "article": 8,
+    "comment": "goood",
+    "author": 2,
+    "like": []
+  }
+},
+{
+  "model": "article.tag",
+  "pk": 1,
+  "fields": {
+    "created_at": "2021-05-17T06:37:58.434Z",
+    "updated_at": "2021-05-17T06:37:58.434Z",
+    "tag": "first"
+  }
+},
+{
+  "model": "article.tag",
+  "pk": 2,
+  "fields": {
+    "created_at": "2021-05-17T06:38:22.108Z",
+    "updated_at": "2021-05-17T06:38:22.108Z",
+    "tag": "second"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$Iu3jUI6oYBV6$7Z7gqsIoPygyH8LuyvYRbTHuqzyldOcx5/Kj2P6NNZI=",
+    "last_login": "2021-05-22T12:50:16.273Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-05-17T06:23:49Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
